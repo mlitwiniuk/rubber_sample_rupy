@@ -32,3 +32,4 @@ gem 'mysql2', '<0.3.0'
 gem "devise"
 gem "jammit"
 gem "jquery-rails"
+gem "rubber", "1.14.1"
