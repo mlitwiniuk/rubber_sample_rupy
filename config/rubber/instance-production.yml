@@ -1,0 +1,160 @@
+--- 
+- !ruby/object:Rubber::Configuration::InstanceItem 
+  domain: rupyrumble.pl
+  external_host: ec2-50-19-139-170.compute-1.amazonaws.com
+  external_ip: 50.19.139.170
+  image_id: ami-fa01f193
+  image_type: m1.large
+  instance_id: i-b3580add
+  internal_host: ip-10-111-49-161.ec2.internal
+  internal_ip: 10.111.49.161
+  name: db01
+  platform: linux
+  roles: 
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: mysql_master
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: db
+    options: 
+      primary: true
+  root_device_type: instance-store
+  security_groups: 
+  - rupyrumble_production_default
+  - rupyrumble_production_db01
+  - rupyrumble_production_mysql_master
+  - rupyrumble_production_db
+  zone: us-east-1b
+- !ruby/object:Rubber::Configuration::InstanceItem 
+  domain: rupyrumble.pl
+  external_host: ec2-50-16-9-197.compute-1.amazonaws.com
+  external_ip: 50.16.9.197
+  image_id: ami-fa01f193
+  image_type: m1.large
+  instance_id: i-575e0c39
+  internal_host: ip-10-2-53-171.ec2.internal
+  internal_ip: 10.2.53.171
+  name: db02
+  platform: linux
+  roles: 
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: mysql_slave
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: db
+    options: {}
+
+  root_device_type: instance-store
+  security_groups: 
+  - rupyrumble_production_default
+  - rupyrumble_production_db02
+  - rupyrumble_production_mysql_slave
+  - rupyrumble_production_db
+  zone: us-east-1b
+- !ruby/object:Rubber::Configuration::InstanceItem 
+  domain: rupyrumble.pl
+  external_host: ec2-50-16-148-95.compute-1.amazonaws.com
+  external_ip: 50.16.148.95
+  image_id: ami-fa01f193
+  image_type: m1.large
+  instance_id: i-855a08eb
+  internal_host: ip-10-38-26-245.ec2.internal
+  internal_ip: 10.38.26.245
+  name: app01
+  platform: linux
+  roles: 
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: app
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: passenger
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: apache
+    options: {}
+
+  root_device_type: instance-store
+  security_groups: 
+  - rupyrumble_production_default
+  - rupyrumble_production_app01
+  - rupyrumble_production_app
+  - rupyrumble_production_passenger
+  - rupyrumble_production_apache
+  zone: us-east-1c
+- !ruby/object:Rubber::Configuration::InstanceItem 
+  domain: rupyrumble.pl
+  external_host: ec2-174-129-88-51.compute-1.amazonaws.com
+  external_ip: 174.129.88.51
+  image_id: ami-fa01f193
+  image_type: m1.large
+  instance_id: i-dd5b09b3
+  internal_host: ip-10-204-243-72.ec2.internal
+  internal_ip: 10.204.243.72
+  name: app02
+  platform: linux
+  roles: 
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: app
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: passenger
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: apache
+    options: {}
+
+  root_device_type: instance-store
+  security_groups: 
+  - rupyrumble_production_default
+  - rupyrumble_production_app02
+  - rupyrumble_production_app
+  - rupyrumble_production_passenger
+  - rupyrumble_production_apache
+  zone: us-east-1c
+- !ruby/object:Rubber::Configuration::InstanceItem 
+  domain: rupyrumble.pl
+  external_host: ec2-75-101-248-4.compute-1.amazonaws.com
+  external_ip: 75.101.248.4
+  image_id: ami-fa01f193
+  image_type: m1.large
+  instance_id: i-5b5a0835
+  internal_host: ip-10-68-19-174.ec2.internal
+  internal_ip: 10.68.19.174
+  name: web01
+  platform: linux
+  roles: 
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: web
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: haproxy
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: passenger
+    options: {}
+
+  - !ruby/object:Rubber::Configuration::RoleItem 
+    name: apache
+    options: {}
+
+  root_device_type: instance-store
+  security_groups: 
+  - rupyrumble_production_default
+  - rupyrumble_production_web
+  - rupyrumble_production_web01
+  - rupyrumble_production_haproxy
+  - rupyrumble_production_passenger
+  - rupyrumble_production_apache
+  zone: us-east-1b
+- volumes: {}
+
+  static_ips: {}
+
